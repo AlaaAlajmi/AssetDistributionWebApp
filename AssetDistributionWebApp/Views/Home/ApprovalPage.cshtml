@@ -1,0 +1,48 @@
+﻿@{
+	ViewBag.Title = "Approval Page";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title></title>
+</head>
+<body>
+	<div>
+		<form>
+			<fieldset disabled>
+				<legend> Assets Distribution Approval Form</legend>
+				<div class="mb-3">
+					<!--Asset Name-->
+					<div class="input-group mb-3">
+						<label for="disabledTextInput" class="form-label">Asset Name</label>
+						<input type="text" id="disabledTextInput" class="form-control" placeholder="Asset Name">
+					</div>
+					<!--Amount-->
+					<div class="input-group mb-3">
+						<label for="disabledTextInput" class="form-label">Amount</label>
+						<input type="text" id="disabledTextInput" class="form-control" placeholder="Amount">
+					</div>
+					<!--Description-->
+					<div class="input-group mb-3">
+						<label for="disabledTextInput" class="form-label">Description</label>
+						<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+					</div>
+					<!--Image-->
+					<div class="input-group mb-3">
+						<label for="disabledTextInput" class="form-label">Attachment</label>
+						<img src="..." class="img-thumbnail" alt="...">
+					</div>
+				</div>
+			</fieldset>
+			<br />
+			<a data-value="Approve" class="btn btn-sm btn-success submitButton">Approve</a>
+			<a data-value="Unapprove" class="btn btn-sm btn-danger submitButton">Decline</a>
+		</form>
+		<input type="hidden" name="result" id="result" />
+
+	</div>
+</body>
+</html>

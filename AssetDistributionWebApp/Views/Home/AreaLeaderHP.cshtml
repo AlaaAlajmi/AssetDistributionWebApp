@@ -1,0 +1,133 @@
+﻿@{
+	ViewBag.Title = "Areal Leader Home Page";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>AreaLeaderHomePage</title>
+
+	<style>
+		fieldset {
+			margin-top: 20px;
+			height: 500px;
+			width: 100%;
+			border: 1px solid gray;
+			overflow: auto;
+			background-color: #f5efff;
+			color: black;
+			padding: 20px;
+		}
+
+		.table, th, td {
+			border: 1px solid black;
+			padding: 20px;
+		}
+
+		button {
+			border: none;
+			background-color: rgb(41 186 44 / 0.82);
+			padding: 9px 16px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 40px 460px;
+			transition-duration: 0.4s;
+			cursor: pointer;
+		}
+
+			button:hover {
+				background-color: rgb(41 186 44 / 1.00)
+			}
+	</style>
+</head>
+<body>
+	<div>
+
+		<fieldset>
+
+			<legend>Welcome</legend>
+			<div>
+
+
+				<div>
+					<!--name of asset-->
+
+					<label for="disabledTextInput" class="form-label">Asset Name</label>
+					<input type="text" class="form-control" placeholder="Asset Name" />
+
+
+
+					<!--amount of asset-->
+
+					<label for="disabledTextInput" class="form-label">Amount</label>
+					<input type="text" class="form-control" placeholder="Amount" />
+
+					<br />
+
+					<!--upload pic-->
+
+					<label for="disabledTextInput" class="form-label">Upload Picture</label>
+					<input class="file-uplad-input" type="file" onchange="readURL(this)" accept="Image/*" />
+
+					<br />
+					<br />
+
+					<!--focal point-->
+
+					<label for="disabledTextInput" class="form-label">Assign focal Point </label>
+					<input type="text" class="form-control" />
+
+				</div>
+
+
+				<!--discreption "inner styling & separate div"-->
+
+				<div>
+
+					<label for="disabledTextInput" class="form-label">Descreption</label>
+					<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+
+				</div>
+
+				<!--employee's table "inner styling & separate div"-->
+
+				<div style="margin:40px 0 0 0">
+					<table>
+
+						<!-- First row -->
+						<tr>
+							<th>Employee</th>
+							<th>Amount</th>
+							<th>if approved</th>
+						</tr>
+						<!-- 2nd row -->
+
+						<tr>
+							<td>text</td>
+							<td>text</td>
+							<td>text</td>
+						</tr>
+
+						<!-- 3rd row -->
+
+						<tr>
+							<td>text</td>
+							<td>text</td>
+							<td>text</td>
+						</tr>
+
+					</table>
+				</div>
+
+				<!--Button-->
+
+				<button type="button">Submit</button>
+
+			</div>
+		</fieldset>
+	</div>
+</body>
+</html>
