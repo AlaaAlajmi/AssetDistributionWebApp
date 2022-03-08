@@ -7,9 +7,12 @@ a.navbar-brand {
   word-break: break-all;
 }
 
+.navbar {
+    margin-top:-50px;
+}
 /* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+    color: #0366d6;
 }
 
 .btn-primary {
@@ -61,6 +64,10 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+ background: url(../img/bg.png);
+ background-size: cover;
+ background-position: center center;
+
 }
 .footer {
   position: absolute;
