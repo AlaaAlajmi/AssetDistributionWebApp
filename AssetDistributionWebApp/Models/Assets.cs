@@ -9,7 +9,7 @@ namespace AssetDistributionWebApp.Models
 	public class assets
 	{
 		[Key]
-		public int id { get; set; }
+		public int assetid { get; set; }
 		public string name { get; set; }
 		public int amount { get; set; }
 		public string imageurl { get; set; }

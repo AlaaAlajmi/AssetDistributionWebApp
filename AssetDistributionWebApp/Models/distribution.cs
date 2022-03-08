@@ -10,15 +10,15 @@ namespace AssetDistributionWebApp.Models
     public class distribution
     {
         [Key]
-        public int id { get; set; }
+        public int distributionid { get; set; }
         
         public int amount { get; set; }
         public string useremail { get; set; }
         public string approved { get; set; }
 
         //FK
-        public int assetID { get; set; }
-        [ForeignKey("assetID")]
+        public int assetid { get; set; }
+        [ForeignKey("assetid")]
         public assets assets { get; set; }
 
         

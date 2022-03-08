@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AssetDistributionWebApp.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace AssetDistributionWebApp.Data
@@ -10,8 +11,11 @@ namespace AssetDistributionWebApp.Data
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
+
             
         }
-    
+       public DbSet<assets> assets { get; set; }
+       public DbSet<distribution> distributions { get; set; }
+
     }
 }
