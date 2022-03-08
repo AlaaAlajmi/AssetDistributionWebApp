@@ -1,16 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace AssetDistributionWebApp.Models
 {
-	public class Assets
+	public class assets
 	{
-		public string Name { get; set; }
-		public int Amount { get; set; }
-		public string ImageUrl { get; set; }
-		public string Description { get; set; }
-		public string FocalPoint { get; set; }
+		[Key]
+		public int id { get; set; }
+		public string name { get; set; }
+		public int amount { get; set; }
+		public string imageurl { get; set; }
+		public string description { get; set; }
+		public string focalPoint { get; set; }
 	}
 }
