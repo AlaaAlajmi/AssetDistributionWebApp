@@ -12,21 +12,22 @@ namespace AssetDistributionWebApp.Controllers
 {
 	public class HomeController : Controller
 	{
-		private readonly AppDbContext appDbContext;
-		public HomeController(AppDbContext context)
+        private readonly AppDbContext appDbContext;
+        public HomeController(AppDbContext context)
         {
-			appDbContext = context;
+            appDbContext = context;
 
         }
-		private readonly ILogger<HomeController> _logger;
+  //      private readonly ILogger<HomeController> _logger;
 		
-		public HomeController(ILogger<HomeController> logger)
-		{
-			_logger = logger;
-		}
+		//public HomeController(ILogger<HomeController> logger)
+		//{
+		//	_logger = logger;
+		//}
 
 		public IActionResult Index()
 		{
+			var data = appDbContext.assets.ToList();
 			return View();
 		}
 
