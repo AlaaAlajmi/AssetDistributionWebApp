@@ -119,12 +119,14 @@ body {
 }
 
 .login-box {
-    margin-top: 75px;
+    margin: 75px auto;
     height: auto;
     background-color: rgba(0, 0, 0, 0.7);
     text-align: center;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
+    margin-bottom:40px;
+    
 }
 
 .login-key {
@@ -150,7 +152,7 @@ body {
     margin-top: 25px;
     margin-left: 50px;
     text-align: left;
-}
+    }
 
 @media screen and (max-width: 300px) {
     .input [type=text], input[type=password] {
@@ -269,5 +271,11 @@ input:focus {
     margin: 0 -10%;
 }
 
+.center-div {
+    overflow: auto; /* Recommended in case content is larger than the container */
+    margin: auto; /* Center the item vertically & horizontally */
+    position: absolute; /* Break it out of the regular flow */
+    top: 0;
+}
 
 
