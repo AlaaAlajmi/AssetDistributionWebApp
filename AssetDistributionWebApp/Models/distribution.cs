@@ -10,8 +10,9 @@ namespace AssetDistributionWebApp.Models
     public class distribution
     {
         [Key]
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int distributionid { get; set; }
-        
+
         public int amount { get; set; }
         public string useremail { get; set; }
         public string senderemail { get; set; }
@@ -22,6 +23,6 @@ namespace AssetDistributionWebApp.Models
         [ForeignKey("assetid")]
         public assets assets { get; set; }
 
-        
+
     }
 }
