@@ -27,7 +27,7 @@ namespace AssetDistributionWebApp.Controllers
 
 		public IActionResult Index()
 		{
-			var data = appDbContext.assets.ToList();
+			//var data = appDbContext.assets.ToList();
 			return View();
 		}
 
