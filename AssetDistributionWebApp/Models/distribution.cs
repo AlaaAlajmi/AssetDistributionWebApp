@@ -14,6 +14,7 @@ namespace AssetDistributionWebApp.Models
         
         public int amount { get; set; }
         public string useremail { get; set; }
+        public string senderemail { get; set; }
         public string approved { get; set; }
 
         //FK
