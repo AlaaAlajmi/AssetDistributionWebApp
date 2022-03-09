@@ -3,19 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AssetDistributionWebApp.Models;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace AssetDistributionWebApp.Data
 {
-    public class AppDbContext:DbContext
+    public class AppDbContext : DbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
 
-            
-        }
-       public DbSet<assets> assets { get; set; }
-       public DbSet<distribution> distributions { get; set; }
 
+        }
+
+        public DbSet<assets> assets { get; set; }
+        public DbSet<distribution> distributions { get; set; }
+        public DbSet<Account> accounts { get; set; }
     }
 }
