@@ -53,6 +53,18 @@ namespace AssetDistributionWebApp.Data
             using (var serviceScope = applicationBuilder.ApplicationServices.CreateScope())
             {
 
+
+
+                //Roles
+                var roleManager = serviceScope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+                if (!await roleManager.RoleExistsAsync(UserRoles.Sender))
+                {
+                    await roleManager.CreateAsync(new IdentityRole(UserRoles.Sender));
+                }
+                if (!await roleManager.RoleExistsAsync(UserRoles.Reciever))
+                {
+                    await roleManager.CreateAsync(new IdentityRole(UserRoles.Reciever));
+                }
                 //Users
                 var userManager = serviceScope.ServiceProvider.GetRequiredService<UserManager<ApplicationUsers>>();
                 string senderuseremail = "Sender@gmail.com";
@@ -83,18 +95,6 @@ namespace AssetDistributionWebApp.Data
                     await userManager.CreateAsync(NewRecieverUser, "123");
                     await userManager.AddToRoleAsync(NewRecieverUser, UserRoles.Reciever);
                 }
-
-                //Roles
-                var roleManager = serviceScope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-                if (!await roleManager.RoleExistsAsync(UserRoles.Sender))
-                {
-                    await roleManager.CreateAsync(new IdentityRole(UserRoles.Sender));
-                }
-                if (!await roleManager.RoleExistsAsync(UserRoles.Reciever))
-                {
-                    await roleManager.CreateAsync(new IdentityRole(UserRoles.Reciever));
-                }
-
             }
         }
     }
