@@ -6,13 +6,14 @@
 		color: white;
 	}
 
-	.login-box {
-		margin-top: 75px;
-		height: auto;
-		background-color: rgba(0, 0, 0, 0.5);
-		text-align: center;
-		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.2);
-	}
+.login-box {
+	margin-top: 75px;
+	height: auto;
+	background-color: rgba(0, 0, 0, 0.7);
+	text-align: center;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.2);
+	border-radius: 5px;
+}
 
 	.login-key {
 		height: 100px;
@@ -58,7 +59,7 @@
 .flexContainer {
 	display: flex;
 	justify-content: center;
-	margin: 0 5% ;
+	margin: inherit;
 }
 
 	/*.hyperlink > a {
@@ -112,21 +113,22 @@
 		letter-spacing: 1px;
 	}
 
-	.btn-outline-primary {
-		background-color: #0D7140;
-		border-color: #0D7140;
-		color: white;
-		border-radius: 0px;
-		font-weight: bold;
-		letter-spacing: 1px;
-		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-		margin-bottom: 50px;
-	}
+.btn-outline-primary {
+	background-color: #0D7140;
+	border-color: #0D7140;
+	color: white;
+	border-radius: 0px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	margin-bottom: 50px;
+	border-radius: 5px;
+}
 
 
 		.btn-outline-primary:hover {
-			background-color: #fec33e;
-			border-color: #fec33e;
+			background-color: #9f9e9e;
+			border-color: #9f9e9e;
 			color: white;
 			right: 0px;
 		}
@@ -137,6 +139,7 @@
 
 	.login-button {
 		padding-right: inherit;
+		
 	}
 
 	.login-text {
@@ -146,5 +149,5 @@
 	}
 
 	.loginbttm {
-		margin-right:50px;
+		margin:0 -10%;
 	}
