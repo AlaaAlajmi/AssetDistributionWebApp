@@ -4,12 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using AssetDistributionWebApp.Models;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace AssetDistributionWebApp.Data
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<applicationusers>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
