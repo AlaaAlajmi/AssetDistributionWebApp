@@ -10,7 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace AssetDistributionWebApp.Data
 {
-    public class AppDbContext : IdentityDbContext<applicationusers>
+    public class AppDbContext : IdentityDbContext<ApplicationUsers>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
