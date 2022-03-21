@@ -1,6 +1,7 @@
 ﻿@{
 	ViewBag.Title = "Areal Leader Home Page";
 }
+@model assets
 <!DOCTYPE html>
 
 <html>
@@ -32,23 +33,23 @@
                         <div class="col-lg-12 login-form">
                             <form>
                                 <div class="form-group ">
-                                    <label class="form-control-label">Asset name </label>
+                                    <label asp-for= "name" class="form-control-label" >Asset name </label>
                                     <input type="text" class="form-control">
                                 </div>
                                <div class="form-group ">
-                                    <label class="form-control-label">Amount </label>
+                                    <label asp-for= "amount"class="form-control-label">Amount </label>
                                     <input type="number" class="form-control">
                                 </div>
                                <div class="form-group ">
-                                   <label class="form-control-label">Upload Image </label>
+                                   <label asp-for= "imageurl" class="form-control-label">Upload Image </label>
                                    <input class="file-uplad-input" type="file" onchange="readURL(this)" accept="Image/*" />
                                </div>
                                <div class="form-group ">
-                                    <label class="form-control-label">Focal point</label>
+                                    <label asp-for= "focalPoint" class="form-control-label">Focal point</label>
                                     <input type="text" class="form-control">
                                 </div>
                                <div class="form-group ">
-                                    <label class="form-control-label">Descrebtion</label>
+                                    <label asp-for= "description"class="form-control-label">Descrebtion</label>
                                     <textarea  rows="3" type="text" class="form-control"></textarea>
                                 </div>
                                
@@ -57,7 +58,7 @@
                                     <div class="col-lg-6 login-btm login-text">
                                     </div>
                                     <div class="col-lg-6 text-center login-btm login-button">
-                                        <button type="submit" class="btn btn-outline-primary btn-lg" asp-action="ApprovalPage">Submit</button>
+                                        <button type="submit"  class="btn btn-outline-primary btn-lg" asp-actoin ="Create">Submit</button>
                                     </div>
                                 </div>
                             </form>

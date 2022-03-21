@@ -4,12 +4,10 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
-using AssetDistributionWebApp.Data.Base;
-using AssetDistributionWebApp.Models;
 
-namespace AssetDistributionWebApp.Models
+namespace AssetDistributionWebApp.Data.ViweModels
 {
-    public class assets 
+    public class NewAssetsVM
     {
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
@@ -34,5 +32,6 @@ namespace AssetDistributionWebApp.Models
         [Required]
         [Display(Name = "Focal Point")]
         public string focalPoint { get; set; }
-    }
+    
+}
 }
