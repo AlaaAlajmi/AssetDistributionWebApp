@@ -12,6 +12,10 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.Identity.Client" Version="4.42.1" />
+    <PackageReference Include="Microsoft.Owin.Host.SystemWeb" Version="4.2.0" />
+    <PackageReference Include="Microsoft.Owin.Security" Version="4.2.0" />
+    <PackageReference Include="Microsoft.Owin.Security.Cookies" Version="4.2.0" />
   </ItemGroup>
 
 </Project>
