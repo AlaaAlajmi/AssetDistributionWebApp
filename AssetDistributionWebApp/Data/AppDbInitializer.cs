@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using AssetDistributionWebApp.Data.Static;
@@ -58,13 +59,12 @@ namespace AssetDistributionWebApp.Data
                 //Roles
                 var roleManager = serviceScope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
                 if (!await roleManager.RoleExistsAsync(UserRoles.Sender))
-                {
+
                     await roleManager.CreateAsync(new IdentityRole(UserRoles.Sender));
-                }
+
                 if (!await roleManager.RoleExistsAsync(UserRoles.Reciever))
-                {
+
                     await roleManager.CreateAsync(new IdentityRole(UserRoles.Reciever));
-                }
                 //Users
                 var userManager = serviceScope.ServiceProvider.GetRequiredService<UserManager<ApplicationUsers>>();
                 string senderuseremail = "Sender@gmail.com";
@@ -73,13 +73,19 @@ namespace AssetDistributionWebApp.Data
                 {
                     var NewSenderUser = new ApplicationUsers()
                     {
-                        //UserName = "sender",
+                        UserName = "sender",
                         Email = senderuseremail
                         //EmailConfirmed = true
                     };
-                    await userManager.CreateAsync(NewSenderUser, "123");
+
+                    await userManager.CreateAsync(NewSenderUser, "User@123");
+
                     await userManager.AddToRoleAsync(NewSenderUser, UserRoles.Sender);
 
+                    if (senderUser == null)
+                    {
+                        Debug.WriteLine("abc");
+                    }
                 }
                 var recieveruseremail = "reciever@gmail.com";
                 var recieverUser = await userManager.FindByEmailAsync(recieveruseremail);
@@ -88,13 +94,14 @@ namespace AssetDistributionWebApp.Data
                 {
                     var NewRecieverUser = new ApplicationUsers()
                     {
-                        //UserName = "reciever",
+                        UserName = "reciever",
                         Email = recieveruseremail
                         //EmailConfirmed = true
                     };
-                    await userManager.CreateAsync(NewRecieverUser, "123");
+                    await userManager.CreateAsync(NewRecieverUser, "User@123");
                     await userManager.AddToRoleAsync(NewRecieverUser, UserRoles.Reciever);
                 }
+
             }
         }
     }
