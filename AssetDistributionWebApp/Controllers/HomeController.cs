@@ -49,33 +49,6 @@ namespace AssetDistributionWebApp.Controllers
 
         [HttpPost]
 
-        public async Task<IActionResult> Create([Bind("id,name,amount,imageurl,describtion,focalpoint")] assets assets)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View(assets);
-            }
-            await (assets);
-            return RedirectToAction(nameof(Index));
-        }
-
-        //Get: Actors/Details/1
-        [AllowAnonymous]
-        public async Task<IActionResult> Details(int id)
-        {
-            var actorDetails = await _service.GetByIdAsync(id);
-
-            if (actorDetails == null) return View("NotFound");
-            return View(actorDetails);
-        }
-
-        //Get: Actors/Edit/1
-        public async Task<IActionResult> Edit(int id)
-        {
-            var actorDetails = await _service.GetByIdAsync(id);
-            if (actorDetails == null) return View("NotFound");
-            return View(actorDetails);
-        }
 
 
         public IActionResult ApprovalPage()

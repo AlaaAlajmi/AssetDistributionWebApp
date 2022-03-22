@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using AssetDistributionWebApp.Data.Base;
 using AssetDistributionWebApp.Models;
-using AssetDistributionWebApp.Data.Services;
 
 namespace AssetDistributionWebApp.Data.Services
 {
-	public interface IAssetService: IEntityBaseRepository<assets>
-	{
-		Task<assets> 
-	}
+    public interface IAssetsServices
+    {
+        Task<IEnumerable<assets>> GetAll();
+        assets GetByID(int id);
+        void Add(assets asset);
+
+    }
 }
