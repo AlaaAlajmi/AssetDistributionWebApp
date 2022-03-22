@@ -8,7 +8,7 @@ namespace AssetDistributionWebApp.Controllers
 {
     public class AssetsController : Controller
     {
-        "id,name,amount,imageurl,describtion,focalpoint"
+
         public IActionResult Index()
         {
             return View();

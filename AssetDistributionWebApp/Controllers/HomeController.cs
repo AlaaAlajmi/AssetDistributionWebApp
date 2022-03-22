@@ -35,12 +35,23 @@ namespace AssetDistributionWebApp.Controllers
         {
             return View();
         }
+
         public IActionResult AreaLeaderHP()
         {
 
             return View();
         }
 
+        [HttpPost]
+        public ActionResult AreaLeaderHP(assets asset)
+        {
+            string name = asset.name;
+            int amount = asset.amount;
+            string imageurl = asset.imageurl;
+            string description = asset.description;
+            string focalpoint = asset.focalPoint;
+            return View();
+        }
         public IActionResult Create()
         {
             return View();
