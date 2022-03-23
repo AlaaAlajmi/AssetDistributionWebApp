@@ -4,7 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using AssetDistributionWebApp.Data;
+using AssetDistributionWebApp.Data.ViewModel;
 using AssetDistributionWebApp.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.Extensions.Logging;
@@ -14,11 +16,14 @@ namespace AssetDistributionWebApp.Controllers
     public class HomeController : Controller
     {
         private readonly AppDbContext _context;
-        public HomeController(AppDbContext context)
+        private readonly UserManager<ApplicationUsers> _userManager;
+        private readonly SignInManager<ApplicationUsers> _signInManager;
+        public HomeController(UserManager<ApplicationUsers> userManager, SignInManager<ApplicationUsers> signInManager, AppDbContext context)
         {
+            _userManager = userManager;
+            _signInManager = signInManager;
             _context = context;
         }
-
 
         //      private readonly ILogger<HomeController> _logger;
 
@@ -33,9 +38,37 @@ namespace AssetDistributionWebApp.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+
+
+
+        public IActionResult Login() => View(new LoginVM());
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginVM loginVM)
         {
-            return View();
+            if (!ModelState.IsValid)
+                return View(loginVM);
+            var user = await _userManager.FindByEmailAsync(loginVM.EmailAddress);
+            if (user != null)
+            {
+                var passwordCheck = await _userManager.CheckPasswordAsync(user, loginVM.Password);
+                if (passwordCheck)
+                {
+                    var result = await _signInManager.PasswordSignInAsync(user, loginVM.Password, false, false);
+                    if (result.Succeeded)
+                    {
+                        return RedirectToAction("AreaLeaderHP");
+                    }
+
+                }
+                TempData["Error"] = "Wrong credentials. Please, try again!"; return View(loginVM);
+            }
+            TempData["Error"] = "Wrong credentials. Please, try again!"; return View(loginVM);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Login", "Account");
         }
 
 
@@ -85,18 +118,23 @@ namespace AssetDistributionWebApp.Controllers
 
         public IActionResult ApprovalPage()
         {
+
             return View();
         }
-
-        public string OpenPopup()
+          public IActionResult ThankYou()
         {
-            return "<h1> This Is Modeless Popup Window</h1>";
+
+            return View();
         }
+        
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
     }
 }

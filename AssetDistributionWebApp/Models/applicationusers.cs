@@ -8,5 +8,6 @@ namespace AssetDistributionWebApp.Models
 {
     public class ApplicationUsers : IdentityUser
     {
+
     }
 }
