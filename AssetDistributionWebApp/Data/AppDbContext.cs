@@ -12,6 +12,10 @@ namespace AssetDistributionWebApp.Data
 {
     public class AppDbContext : IdentityDbContext<ApplicationUsers>
     {
+        public AppDbContext()
+        {
+        }
+
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
 

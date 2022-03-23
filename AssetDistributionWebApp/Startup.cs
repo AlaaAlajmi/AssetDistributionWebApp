@@ -31,7 +31,7 @@ namespace AssetDistributionWebApp
             //DB Context Configuration
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnectionString")));
             services.AddControllersWithViews();
-
+            //Service Configuration
             //Authentication and Authorization
             services.AddIdentity<ApplicationUsers, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
             services.AddMemoryCache();

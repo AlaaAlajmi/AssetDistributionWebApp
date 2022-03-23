@@ -4,12 +4,11 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
-using AssetDistributionWebApp.Data.Base;
 using AssetDistributionWebApp.Models;
 
 namespace AssetDistributionWebApp.Models
 {
-    public class assets 
+    public class assets
     {
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
