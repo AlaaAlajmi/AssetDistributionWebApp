@@ -88,6 +88,11 @@ namespace AssetDistributionWebApp.Controllers
             return View();
         }
 
+        public string OpenPopup()
+        {
+            return "<h1> This Is Modeless Popup Window</h1>";
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
